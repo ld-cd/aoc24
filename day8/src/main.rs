@@ -15,9 +15,9 @@ fn main() -> Result<(), std::io::Error> {
 }
 
 fn run(s: &str) -> (i64, i64) {
-    let mut antinodes: HashSet<(isize, isize)> = HashSet::new();
-    let mut antinodes_res: HashSet<(isize, isize)> = HashSet::new();
-    let mut antennas: HashMap<u8, Vec<(isize, isize)>> = HashMap::new();
+    let mut antinodes: HashSet<(isize, isize)> = HashSet::with_capacity(8192);
+    let mut antinodes_res: HashSet<(isize, isize)> = HashSet::with_capacity(8192);
+    let mut antennas: HashMap<u8, Vec<(isize, isize)>> = HashMap::with_capacity(8192);
 
     let width = s.lines().next().unwrap().len() as isize;
     let height = s.lines().count() as isize;
